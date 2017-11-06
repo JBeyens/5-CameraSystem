@@ -11,5 +11,15 @@ public class Dispatch extends Actor{
 	public Dispatch(Locatie locatie) {
 		super(locatie);
 	}
+	
+	
+	//Parameter could be index. Need further investigation
+	public void removeCamera(Camera camera){
+		this.cameras.remove(camera);
+	}
+	
+	public void addCamera(Camera camera){
+		this.cameras.add(camera);
+	}
 
 }
