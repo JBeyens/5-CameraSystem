@@ -9,7 +9,7 @@ import model.Locatie;
 import model.NummerPlaat;
 import model.actor.IVoertuig;
 import model.actor.Patrouille;
-import model.actor.Voertuig;
+import model.actor.Vehicle;
 
 public class Randomizer {
 	private static Random random = new Random();
@@ -65,7 +65,7 @@ public class Randomizer {
 	public static LinkedList<IVoertuig> getVoertuigen() {
 		LinkedList<IVoertuig> voertuigen = new LinkedList<IVoertuig>();
 		for (int i = 0; i < 150 + random.nextInt(MAX_VOERTUIGEN); i++) {
-			voertuigen.add((Voertuig) ActorFactory.createActor(	ActorFactory.VOERTUIG, getALocatie()));
+			voertuigen.add((Vehicle) ActorFactory.createActor(	ActorFactory.VOERTUIG, getALocatie()));
 		}
 		return voertuigen;
 	}

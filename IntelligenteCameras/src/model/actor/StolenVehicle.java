@@ -1,31 +1,15 @@
 package model.actor;
 
-import model.Locatie;
 
 
-public class StolenVehicle implements IVoertuig{
-	private IVoertuig state;
+public class StolenVehicle extends Vehicle{
 	
-	public StolenVehicle(IVoertuig state){
-		this.state = state;
+	
+	public StolenVehicle(IVoertuig vehicle){
+		super(vehicle.getLocatie());
 	}
+
 
 	
 
-	@Override
-	public void setMerk(String merk) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setGeseind(Boolean isGeseind) {
-		state.setGeseind(isGeseind);
-		
-	}
-
-	@Override
-	public Locatie getLocatie() {
-		return state.getLocatie();
-	}
 }

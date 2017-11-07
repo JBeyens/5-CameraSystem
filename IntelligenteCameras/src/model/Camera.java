@@ -2,7 +2,7 @@ package model;
 
 import factory.ActorFactory;
 import model.actor.Actor;
-import model.actor.Voertuig;
+import model.actor.Vehicle;
 
 public class Camera extends Actor {
     private static int count = 0;
@@ -16,14 +16,14 @@ public class Camera extends Actor {
         setCounter(++count);
     }
     
-    public double getSnelheid(Voertuig voertuig){ 
+    public double getSnelheid(Vehicle voertuig){ 
     //snelheidsherkenning in km/u
         return 0.0;//dummy waarde
     }
     
-    public Voertuig getVoertuig(Foto foto){
+    public Vehicle getVoertuig(Foto foto){
     //herken voertuig op basis van foto (buiten scope)
-        return (Voertuig)ActorFactory.createActor(ActorFactory.VOERTUIG, getLocatie());
+        return (Vehicle)ActorFactory.createActor(ActorFactory.VOERTUIG, getLocatie());
     }
     
     public Foto getFoto(){

@@ -5,7 +5,7 @@ import model.Locatie;
 import model.actor.Actor;
 import model.actor.Dispatch;
 import model.actor.Patrouille;
-import model.actor.Voertuig;
+import model.actor.Vehicle;
 import randomizer.Randomizer;
 
 public class ActorFactory {
@@ -29,9 +29,9 @@ public class ActorFactory {
                 break;
                 
             case VOERTUIG:
-            	actor = new Voertuig(locatie);
-                 ((Voertuig)actor).setNummerPlaat(Randomizer.getNummerPlaat());
-                 ((Voertuig)actor).setMerk(Randomizer.getMerk());
+            	actor = new Vehicle(locatie);
+                 ((Vehicle)actor).setNummerPlaat(Randomizer.getNummerPlaat());
+                 ((Vehicle)actor).setMerk(Randomizer.getMerk());
                 break;
                 
         }
