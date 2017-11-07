@@ -73,21 +73,15 @@ public class Dispatch extends Actor implements DispatchSubject{
 		this.cameras.add(camera);
 	}
 
-
-	
-
-
 	public void setCameras(LinkedList<Camera> cameras) {
-		// TODO Auto-generated method stub
-		
+		this.cameras = cameras;
 	}
-
 
 	public void setGeseind(LinkedList<IVoertuig> geseind) {
-		// TODO Auto-generated method stub
-		
+		for (IVoertuig iVoertuig : geseind) {
+			iVoertuig.setGeseind(true);
+		}
 	}
-
 
 	public void signaleer(IVoertuig voertuig) {
 		// TODO Auto-generated method stub
@@ -100,16 +94,18 @@ public class Dispatch extends Actor implements DispatchSubject{
 		return null;
 	}
 
-
-	public IVoertuig getGeseind() {
-		// TODO Auto-generated method stub
+	public String getGeseind() {
 		return null;
 	}
 
 
-	public IVoertuig getCameras() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getCameras() {
+		String allCameras = "";
+		for (Camera camera : cameras) {
+			allCameras += "\n" + camera.toString();
+		}
+
+		return allCameras;
 	}
 
 
