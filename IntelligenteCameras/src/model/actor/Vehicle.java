@@ -12,6 +12,11 @@ public class Vehicle extends Actor implements IVoertuig {
 		super(locatie);
 		isGeseind = false;
 	}
+	
+	@Override
+	public Locatie getLocatie(){
+		return super.getLocatie();
+	}
 
 	public void setNummerPlaat(NummerPlaat nummerPlaat) {
 		this.nummerPlaat = nummerPlaat;

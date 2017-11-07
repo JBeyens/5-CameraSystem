@@ -5,6 +5,7 @@ import java.util.ListIterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import factory.ActorFactory;
+import model.actor.Actor;
 import model.actor.Camera;
 import model.actor.Dispatch;
 import model.actor.IVoertuig;
