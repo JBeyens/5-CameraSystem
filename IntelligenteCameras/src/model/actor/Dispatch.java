@@ -77,7 +77,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	
 
 
-	public void setCameras(LinkedList<Camera> cameras2) {
+	public void setCameras(LinkedList<Camera> cameras) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -95,19 +95,19 @@ public class Dispatch extends Actor implements DispatchSubject{
 	}
 
 
-	public Object getGesignaleerd() {
+	public IVoertuig getGesignaleerd() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
-	public Object getGeseind() {
+	public IVoertuig getGeseind() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
-	public Object getCameras() {
+	public IVoertuig getCameras() {
 		// TODO Auto-generated method stub
 		return null;
 	}
