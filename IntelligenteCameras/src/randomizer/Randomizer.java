@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import factory.ActorFactory;
-import model.Camera;
 import model.Locatie;
 import model.NummerPlaat;
+import model.actor.Camera;
 import model.actor.IVoertuig;
 import model.actor.NoInsuranceVehicle;
 import model.actor.Patrouille;

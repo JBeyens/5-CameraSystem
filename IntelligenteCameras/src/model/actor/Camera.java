@@ -1,8 +1,8 @@
-package model;
+package model.actor;
 
 import factory.ActorFactory;
-import model.actor.Actor;
-import model.actor.Vehicle;
+import model.Foto;
+import model.Locatie;
 
 public class Camera extends Actor {
     private static int count = 0;
@@ -32,8 +32,8 @@ public class Camera extends Actor {
     }
     
     @Override
-    public String toString(){
-    	return super.toString();
-    }
+	public String toString(){
+		return "\nCamera " + super.toString();
+	}
 
 }

@@ -1,8 +1,8 @@
 package factory;
 
-import model.Camera;
 import model.Locatie;
 import model.actor.Actor;
+import model.actor.Camera;
 import model.actor.Dispatch;
 import model.actor.Patrouille;
 import model.actor.Vehicle;
