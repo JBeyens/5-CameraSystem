@@ -9,7 +9,10 @@ public class StolenVehicle extends Vehicle{
 		super(vehicle.getLocatie());
 	}
 
-
+	@Override
+	public String toString(){
+		return super.toString() + " en is geseind want gestolen!";
+	}
 	
 
 }
