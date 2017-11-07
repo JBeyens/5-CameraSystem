@@ -16,6 +16,7 @@ public abstract class Actor {
 
 	public Actor(Locatie locatie) {
 		this.locatie = locatie;
+		counter++;
 	}
 
 	public Locatie getLocatie() {

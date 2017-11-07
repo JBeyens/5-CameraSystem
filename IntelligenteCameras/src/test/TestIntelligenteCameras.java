@@ -28,9 +28,9 @@ public class TestIntelligenteCameras {
 		geseind = new LinkedList<IVoertuig>();
 		dispatch = (Dispatch) ActorFactory.createActor(ActorFactory.DISPATCH,Randomizer.getLocatie());
 
-		configureerData();
+		//configureerData();
 		printBasicData();
-		simuleerAchtervolging();
+		//simuleerAchtervolging();
 	}
 
 	/**
