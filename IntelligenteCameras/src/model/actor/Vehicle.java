@@ -26,5 +26,10 @@ public class Vehicle extends Actor implements IVoertuig {
 	public void setGeseind(Boolean isGeseind) {
 		this.isGeseind = isGeseind;
 	}
+	
+	@Override
+	public String toString(){
+		return "\nVoertuig " + super.toString();
+	}
 
 }

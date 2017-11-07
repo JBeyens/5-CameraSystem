@@ -30,7 +30,7 @@ public class TestIntelligenteCameras {
 
 		configureerData();
 		printBasicData();
-		//simuleerAchtervolging();
+		simuleerAchtervolging();
 	}
 
 	/**

@@ -29,5 +29,10 @@ public class Patrouille extends Actor implements PatrouilleObserver{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public String toString(){
+		return "\nPatrouille " + super.toString();
+	}
 
 }

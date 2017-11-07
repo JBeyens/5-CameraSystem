@@ -113,6 +113,9 @@ public class Dispatch extends Actor implements DispatchSubject{
 		return allCameras;
 	}
 
-
+	@Override
+	public String toString(){
+		return "\nDispatch " + super.toString();
+	}
 
 }
