@@ -8,7 +8,9 @@ import model.Camera;
 import model.Locatie;
 import model.NummerPlaat;
 import model.actor.IVoertuig;
+import model.actor.NoInsuranceVehicle;
 import model.actor.Patrouille;
+import model.actor.StolenVehicle;
 import model.actor.Vehicle;
 
 public class Randomizer {
@@ -94,7 +96,7 @@ public class Randomizer {
 	
 	public static IVoertuig seinGestolenVoertuig(LinkedList<IVoertuig> voertuigen){
 		int index = random.nextInt(voertuigen.size());
-		IVoertuig voertuig = new Gestolen(voertuigen.get(index));
+		IVoertuig voertuig = new StolenVehicle(voertuigen.get(index));
 		voertuig.setGeseind(true);
 		voertuigen.set(index, voertuig);
 		return voertuigen.get(index);
@@ -102,7 +104,7 @@ public class Randomizer {
 	
 	public static IVoertuig seinNietVerzekerdVoertuig(LinkedList<IVoertuig> voertuigen){
 		int index = random.nextInt(voertuigen.size());
-		IVoertuig voertuig = new NietVerzekerd(voertuigen.get(index));
+		IVoertuig voertuig = new NoInsuranceVehicle(voertuigen.get(index));
 		voertuig.setGeseind(true);
 		voertuigen.set(index, voertuig);
 		return voertuigen.get(index);
