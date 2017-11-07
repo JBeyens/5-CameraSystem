@@ -9,14 +9,59 @@ import model.Locatie;
 import observer.DispatchSubject;
 import observer.PatrouilleObserver;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 07/11/2017
+	@Project Intelligente Cameras
+	@Doel
+ */
+
 public class Dispatch extends Actor implements DispatchSubject{
+	/*
+	 * Fields
+	 */
 	private LinkedList<Camera> cameras;
 	private Set<PatrouilleObserver> patrouilleObservers;
 	
+	/*
+	 * Constructor
+	 */
 	public Dispatch(Locatie locatie) {
 		super(locatie);
 		patrouilleObservers = new HashSet<PatrouilleObserver>();
 	}
+	
+	
+	/* (non-Javadoc)
+	 * @see observer.DispatchSubject#doNotify()
+	 */
+	@Override
+	public void doNotify() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	/* (non-Javadoc)
+	 * @see observer.DispatchSubject#addObserver(observer.PatrouilleObserver)
+	 */
+	@Override
+	public void addObserver(PatrouilleObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	/* (non-Javadoc)
+	 * @see observer.DispatchSubject#removeObserver(observer.PatrouilleObserver)
+	 */
+	@Override
+	public void removeObserver(PatrouilleObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 	
 	//Parameter could be index. Need further investigation
@@ -29,25 +74,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	}
 
 
-	@Override
-	public void doNotify() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void addObserver(PatrouilleObserver observer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void removeObserver(PatrouilleObserver observer) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 
 	public void setCameras(LinkedList<Camera> cameras2) {
