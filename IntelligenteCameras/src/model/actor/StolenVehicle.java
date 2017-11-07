@@ -5,7 +5,7 @@ package model.actor;
 public class StolenVehicle extends Vehicle{
 	
 	
-	public StolenVehicle(IVoertuig vehicle){
+	public StolenVehicle(ITrackable vehicle){
 		super(vehicle.getLocatie());
 	}
 

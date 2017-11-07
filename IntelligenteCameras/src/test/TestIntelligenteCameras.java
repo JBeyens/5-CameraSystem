@@ -8,16 +8,16 @@ import factory.ActorFactory;
 import model.actor.Actor;
 import model.actor.Camera;
 import model.actor.Dispatch;
-import model.actor.IVoertuig;
+import model.actor.ITrackable;
 import model.actor.Patrouille;
 import randomizer.Randomizer;
 
 public class TestIntelligenteCameras {
-	public static LinkedList<IVoertuig> voertuigen;
+	public static LinkedList<ITrackable> voertuigen;
 	public static LinkedList<Camera> cameras;
 	public static LinkedList<Patrouille> patrouilles;
-	public static LinkedList<IVoertuig> gedetecteerd;
-	public static LinkedList<IVoertuig> geseind;
+	public static LinkedList<ITrackable> gedetecteerd;
+	public static LinkedList<ITrackable> geseind;
 	public static Dispatch dispatch;
 
 
@@ -25,8 +25,8 @@ public class TestIntelligenteCameras {
 		voertuigen = Randomizer.getVoertuigen();
 		cameras = Randomizer.getCameras();
 		patrouilles = Randomizer.getPatrouilles();
-		gedetecteerd = new LinkedList<IVoertuig>();
-		geseind = new LinkedList<IVoertuig>();
+		gedetecteerd = new LinkedList<ITrackable>();
+		geseind = new LinkedList<ITrackable>();
 		dispatch = (Dispatch) ActorFactory.createActor(ActorFactory.DISPATCH,Randomizer.getLocatie());
 
 		configureerData();
@@ -73,10 +73,10 @@ public class TestIntelligenteCameras {
 	 * @param voertuigen
 	 */
 	private static void detecteerVoertuigen(LinkedList<Camera> cameras,
-			LinkedList<IVoertuig> voertuigen) {
-		ListIterator<IVoertuig> listVoertuigen = voertuigen.listIterator();
+			LinkedList<ITrackable> voertuigen) {
+		ListIterator<ITrackable> listVoertuigen = voertuigen.listIterator();
 		ListIterator<Camera> listCameras = cameras.listIterator();
-		IVoertuig voertuig;
+		ITrackable voertuig;
 		Camera camera;
 		while (listCameras.hasNext()) {
 			camera = listCameras.next();

@@ -3,7 +3,7 @@ package model.actor;
 import model.Locatie;
 import model.NummerPlaat;
 
-public class Vehicle extends Actor implements IVoertuig {
+public class Vehicle extends Actor implements ITrackable {
 	private String merk;
 	private Boolean isGeseind;
 	private NummerPlaat nummerPlaat;

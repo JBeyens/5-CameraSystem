@@ -7,7 +7,7 @@ import factory.ActorFactory;
 import model.Locatie;
 import model.NummerPlaat;
 import model.actor.Camera;
-import model.actor.IVoertuig;
+import model.actor.ITrackable;
 import model.actor.NoInsuranceVehicle;
 import model.actor.Patrouille;
 import model.actor.StolenVehicle;
@@ -64,8 +64,8 @@ public class Randomizer {
 		return cameras;
 	}
 
-	public static LinkedList<IVoertuig> getVoertuigen() {
-		LinkedList<IVoertuig> voertuigen = new LinkedList<IVoertuig>();
+	public static LinkedList<ITrackable> getVoertuigen() {
+		LinkedList<ITrackable> voertuigen = new LinkedList<ITrackable>();
 		for (int i = 0; i < 150 + random.nextInt(MAX_VOERTUIGEN); i++) {
 			voertuigen.add((Vehicle) ActorFactory.createActor(	ActorFactory.VOERTUIG, getALocatie()));
 		}
@@ -94,17 +94,17 @@ public class Randomizer {
 		return (Locatie)getLocaties().get(random.nextInt(locaties.size()));
 	}
 	
-	public static IVoertuig seinGestolenVoertuig(LinkedList<IVoertuig> voertuigen){
+	public static ITrackable seinGestolenVoertuig(LinkedList<ITrackable> voertuigen){
 		int index = random.nextInt(voertuigen.size());
-		IVoertuig voertuig = new StolenVehicle(voertuigen.get(index));
+		ITrackable voertuig = new StolenVehicle(voertuigen.get(index));
 		voertuig.setGeseind(true);
 		voertuigen.set(index, voertuig);
 		return voertuigen.get(index);
 	}
 	
-	public static IVoertuig seinNietVerzekerdVoertuig(LinkedList<IVoertuig> voertuigen){
+	public static ITrackable seinNietVerzekerdVoertuig(LinkedList<ITrackable> voertuigen){
 		int index = random.nextInt(voertuigen.size());
-		IVoertuig voertuig = new NoInsuranceVehicle(voertuigen.get(index));
+		ITrackable voertuig = new NoInsuranceVehicle(voertuigen.get(index));
 		voertuig.setGeseind(true);
 		voertuigen.set(index, voertuig);
 		return voertuigen.get(index);

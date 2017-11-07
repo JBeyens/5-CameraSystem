@@ -21,7 +21,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	 * Fields
 	 */
 	private LinkedList<Camera> cameras;
-	private LinkedList<IVoertuig> geseind;
+	private LinkedList<ITrackable> geseind;
 	private Set<PatrouilleObserver> patrouilleObservers;
 	
 	/*
@@ -78,24 +78,24 @@ public class Dispatch extends Actor implements DispatchSubject{
 		this.cameras = cameras;
 	}
 
-	public void setGeseind(LinkedList<IVoertuig> geseind) {
+	public void setGeseind(LinkedList<ITrackable> geseind) {
 		this.geseind = geseind;
 	}
 
-	public void signaleer(IVoertuig voertuig) {
+	public void signaleer(ITrackable voertuig) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
-	public IVoertuig getGesignaleerd() {
+	public ITrackable getGesignaleerd() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public String getGeseind() {
 		String allGeSeind = "";
-		for (IVoertuig iVoertuig : geseind) {
+		for (ITrackable iVoertuig : geseind) {
 			allGeSeind += iVoertuig.toString();
 		}
 
