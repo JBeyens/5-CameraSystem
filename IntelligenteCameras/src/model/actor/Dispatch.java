@@ -22,6 +22,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	 * Fields
 	 */
 	private LinkedList<Camera> cameras;
+	private LinkedList<IVoertuig> geseind;
 	private Set<PatrouilleObserver> patrouilleObservers;
 	
 	/*
@@ -30,6 +31,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	public Dispatch(Locatie locatie) {
 		super(locatie);
 		patrouilleObservers = new HashSet<PatrouilleObserver>();
+		geseind = new LinkedList<>();
 	}
 	
 	
@@ -78,9 +80,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	}
 
 	public void setGeseind(LinkedList<IVoertuig> geseind) {
-		for (IVoertuig iVoertuig : geseind) {
-			iVoertuig.setGeseind(true);
-		}
+		this.geseind = geseind;
 	}
 
 	public void signaleer(IVoertuig voertuig) {
@@ -95,7 +95,12 @@ public class Dispatch extends Actor implements DispatchSubject{
 	}
 
 	public String getGeseind() {
-		return null;
+		String allGeSeind = "";
+		for (IVoertuig iVoertuig : geseind) {
+			allGeSeind += IVoertuig.class.toString();
+		}
+
+		return allGeSeind;
 	}
 
 
