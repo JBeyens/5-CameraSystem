@@ -96,7 +96,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	public String getGeseind() {
 		String allGeSeind = "";
 		for (IVoertuig iVoertuig : geseind) {
-			allGeSeind += IVoertuig.class.toString();
+			allGeSeind += iVoertuig.toString();
 		}
 
 		return allGeSeind;
