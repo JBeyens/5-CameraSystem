@@ -10,6 +10,7 @@ public class Voertuig extends Actor implements IVoertuig {
 
 	public Voertuig(Locatie locatie) {
 		super(locatie);
+		isGeseind = false;
 	}
 
 	
