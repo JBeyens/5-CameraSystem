@@ -20,7 +20,7 @@ public class Voertuig extends Actor implements IVoertuig {
 	}
 
 
-	@Override
+	
 	public void setNummerPlaat(NummerPlaat nummerPlaat) {
 		this.nummerPlaat = nummerPlaat;
 	}
