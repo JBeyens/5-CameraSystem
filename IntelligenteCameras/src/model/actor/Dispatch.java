@@ -30,7 +30,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	public Dispatch(Locatie locatie) {
 		super(locatie);
 		patrouilleObservers = new HashSet<PatrouilleObserver>();
-		geseind = new LinkedList<>();
+		geseind = new LinkedList<ITrackable>();
 	}
 	
 	public void signaleer(ITrackable voertuig) {

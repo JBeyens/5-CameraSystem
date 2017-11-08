@@ -3,6 +3,7 @@ package model.actor;
 import model.Locatie;
 
 public abstract class Actor {
+	// instance variables - 
 	private Locatie locatie;
 	private int counter;
 
@@ -10,26 +11,21 @@ public abstract class Actor {
 		return counter;
 	}
 
-	public Actor(Locatie locatie) {
-		this.locatie = locatie;
-		counter++;
-	}
-	
 	public void setCounter(int counter) {
 		this.counter = counter;
+	}
+
+	public Actor(Locatie locatie) {
+		this.locatie = locatie;
 	}
 
 	public Locatie getLocatie() {
 		return locatie;
 	}
 
-	public void setLocatie(Locatie locatie) {
-		this.locatie = locatie;
-	}
-	
 	@Override
 	public String toString() {
-		return "nr. " + getCounter()+ " bevindt zich op " + getLocatie();
+		return "\n\t " + getClass().getName() + " nr. " + getCounter()+ " bevindt zich op " + getLocatie();
 	}
+} 
 
-}
