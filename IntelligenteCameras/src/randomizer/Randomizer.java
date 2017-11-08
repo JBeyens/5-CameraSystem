@@ -7,13 +7,15 @@ import factory.ActorFactory;
 import model.Locatie;
 import model.NummerPlaat;
 import model.actor.Camera;
+import model.actor.Gestolen;
 import model.actor.ITrackable;
-import model.actor.NoInsuranceVehicle;
+import model.actor.NietVerzekerd;
 import model.actor.Patrouille;
-import model.actor.StolenVehicle;
-import model.actor.Vehicle;
+import model.actor.Voertuig;
 
 public class Randomizer {
+// properties en methods om via een random object ‘test’ data te genereren.
+	// instance variables - 
 	private static Random random = new Random();
 	private static final int MAX_CAMERAS = 50;
 	private static final int MAX_PATROUILLES = 15;
@@ -36,8 +38,8 @@ public class Randomizer {
 	}
 
 	public static String getMerk() {
-		String merken[] = { "Ford", "Aston Martin", "VW", "Hyundai", "Opel", "Chevrolet",
-				"CitroÃ«n", "Renault", "Seat", "Skoda", "Toyota", "Lada",
+		String merken[] = { "Ford", "VW", "Hyundai", "Opel", "Chevrolet",
+				"Citroën", "Renault", "Seat", "Skoda", "Toyota", "Lada",
 				"Mitsubishi", "Nissan", "Dacia", "Jaguar", "Mercedes", "BMW",
 				"Porche", "Range Rover"};
 		return merken[random.nextInt(merken.length)];
@@ -67,7 +69,7 @@ public class Randomizer {
 	public static LinkedList<ITrackable> getVoertuigen() {
 		LinkedList<ITrackable> voertuigen = new LinkedList<ITrackable>();
 		for (int i = 0; i < 150 + random.nextInt(MAX_VOERTUIGEN); i++) {
-			voertuigen.add((Vehicle) ActorFactory.createActor(	ActorFactory.VOERTUIG, getALocatie()));
+			voertuigen.add((Voertuig) ActorFactory.createActor(	ActorFactory.VOERTUIG, getALocatie()));
 		}
 		return voertuigen;
 	}
@@ -96,7 +98,7 @@ public class Randomizer {
 	
 	public static ITrackable seinGestolenVoertuig(LinkedList<ITrackable> voertuigen){
 		int index = random.nextInt(voertuigen.size());
-		ITrackable voertuig = new StolenVehicle(voertuigen.get(index));
+		ITrackable voertuig = new Gestolen(voertuigen.get(index));
 		voertuig.setGeseind(true);
 		voertuigen.set(index, voertuig);
 		return voertuigen.get(index);
@@ -104,12 +106,9 @@ public class Randomizer {
 	
 	public static ITrackable seinNietVerzekerdVoertuig(LinkedList<ITrackable> voertuigen){
 		int index = random.nextInt(voertuigen.size());
-		ITrackable voertuig = new NoInsuranceVehicle(voertuigen.get(index));
+		ITrackable voertuig = new NietVerzekerd(voertuigen.get(index));
 		voertuig.setGeseind(true);
 		voertuigen.set(index, voertuig);
 		return voertuigen.get(index);
 	}
-
-	
-
 }
