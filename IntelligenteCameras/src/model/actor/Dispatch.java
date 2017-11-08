@@ -33,13 +33,29 @@ public class Dispatch extends Actor implements DispatchSubject{
 		geseind = new LinkedList<>();
 	}
 	
+	public void signaleer(ITrackable voertuig) {
+		/*
+		 * Check if voertuig is geseind
+		 * if true => doNotify();
+		 */
+		
+	}
+
+	public ITrackable getGesignaleerd() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	/* (non-Javadoc)
 	 * @see observer.DispatchSubject#doNotify()
 	 */
 	@Override
 	public void doNotify() {
-		// TODO Auto-generated method stub
+		/*
+		 * Iterator through PatrouilleObservers
+		 * while hasnext => doUpdate();
+		 */
 		
 	}
 
@@ -79,16 +95,6 @@ public class Dispatch extends Actor implements DispatchSubject{
 		this.geseind = geseind;
 	}
 
-	public void signaleer(ITrackable voertuig) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public ITrackable getGesignaleerd() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public String getGeseind() {
 		String allGeSeind = "";
 		for (ITrackable iVoertuig : geseind) {
@@ -97,7 +103,6 @@ public class Dispatch extends Actor implements DispatchSubject{
 
 		return allGeSeind;
 	}
-
 
 	public String getCameras() {
 		String allCameras = "";
