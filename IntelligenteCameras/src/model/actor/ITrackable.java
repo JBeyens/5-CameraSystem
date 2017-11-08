@@ -4,6 +4,9 @@ import model.Locatie;
 
 
 public interface ITrackable {
-	public void setGeseind(Boolean isGeseind);
-	public Locatie getLocatie();
+	void setGeseind(Boolean isGeseind);
+	Boolean getGeseind();
+	
+	void setLocatie(Locatie locatie);
+	Locatie getLocatie();
 }
