@@ -49,8 +49,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	 */
 	@Override
 	public void addObserver(PatrouilleObserver observer) {
-		// TODO Auto-generated method stub
-		
+		patrouilleObservers.add(observer);	
 	}
 
 
@@ -59,10 +58,8 @@ public class Dispatch extends Actor implements DispatchSubject{
 	 */
 	@Override
 	public void removeObserver(PatrouilleObserver observer) {
-		// TODO Auto-generated method stub
-		
+		patrouilleObservers.remove(observer);
 	}
-	
 	
 	
 	//Parameter could be index. Need further investigation
@@ -86,7 +83,6 @@ public class Dispatch extends Actor implements DispatchSubject{
 		// TODO Auto-generated method stub
 		
 	}
-
 
 	public ITrackable getGesignaleerd() {
 		// TODO Auto-generated method stub

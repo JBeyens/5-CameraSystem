@@ -12,7 +12,6 @@ public class Vehicle extends Actor implements ITrackable {
 		super(locatie);
 		isGeseind = false;
 	}
-	
 
 	public void setNummerPlaat(NummerPlaat nummerPlaat) {
 		this.nummerPlaat = nummerPlaat;
