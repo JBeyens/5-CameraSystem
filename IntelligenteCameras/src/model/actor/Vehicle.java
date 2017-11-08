@@ -37,4 +37,10 @@ public class Vehicle extends Actor implements ITrackable {
 		return super.getLocatie();
 	}
 
+
+	@Override
+	public Boolean getGeseind() {
+		return isGeseind;
+	}
+
 }
