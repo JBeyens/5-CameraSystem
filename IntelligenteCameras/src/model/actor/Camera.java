@@ -16,14 +16,14 @@ public class Camera extends Actor {
         setCounter(++count);
     }
     
-    public double getSnelheid(Vehicle voertuig){ 
+    public double getSnelheid(Voertuig voertuig){ 
     //snelheidsherkenning in km/u
         return 0.0;//dummy waarde
     }
     
-    public Vehicle getVoertuig(Foto foto){
+    public Voertuig getVoertuig(Foto foto){
     //herken voertuig op basis van foto (buiten scope)
-        return (Vehicle)ActorFactory.createActor(ActorFactory.VOERTUIG, getLocatie());
+        return (Voertuig)ActorFactory.createActor(ActorFactory.VOERTUIG, getLocatie());
     }
     
     public Foto getFoto(){

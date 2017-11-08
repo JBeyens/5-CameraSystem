@@ -1,6 +1,6 @@
 package model.actor;
 
-public class NoInsuranceVehicle extends Vehicle{
+public class NoInsuranceVehicle extends Voertuig{
 
 	public NoInsuranceVehicle(ITrackable vehicle){
 		super(vehicle.getLocatie());

@@ -2,11 +2,11 @@ package model.actor;
 
 
 
-public class StolenVehicle extends Vehicle{
+public class StolenVehicle extends Voertuig{
 	
 	
-	public StolenVehicle(ITrackable vehicle){
-		super(vehicle.getLocatie());
+	public StolenVehicle(ITrackable voertuig){
+		super(voertuig.getLocatie());
 	}
 
 	@Override
