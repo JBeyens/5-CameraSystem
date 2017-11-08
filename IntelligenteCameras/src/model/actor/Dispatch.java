@@ -102,7 +102,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	public String getCameras() {
 		String allCameras = "";
 		for (Camera camera : cameras) {
-			allCameras += "\n" + camera.toString();
+			allCameras += camera.toString();
 		}
 
 		return allCameras;
