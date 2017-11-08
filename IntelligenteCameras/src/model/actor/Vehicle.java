@@ -13,16 +13,11 @@ public class Vehicle extends Actor implements ITrackable {
 		isGeseind = false;
 	}
 	
-	@Override
-	public Locatie getLocatie(){
-		return super.getLocatie();
-	}
 
 	public void setNummerPlaat(NummerPlaat nummerPlaat) {
 		this.nummerPlaat = nummerPlaat;
 	}
 	
-	@Override
 	public void setMerk(String merk) {
 		this.merk = merk;
 	}
@@ -35,6 +30,11 @@ public class Vehicle extends Actor implements ITrackable {
 	@Override
 	public String toString(){
 		return "\nVoertuig " + super.toString();
+	}
+	
+	@Override
+	public Locatie getLocatie(){
+		return super.getLocatie();
 	}
 
 }
