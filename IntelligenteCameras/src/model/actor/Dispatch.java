@@ -20,6 +20,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	/*
 	 * Fields
 	 */
+	private static int dispatchCounter = 0; // Houdt de nummering van de objecten bij
 	private LinkedList<Camera> cameras;
 	private LinkedList<ITrackable> geseind;
 	private Set<PatrouilleObserver> patrouilleObservers;
@@ -29,6 +30,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	 */
 	public Dispatch(Locatie locatie) {
 		super(locatie);
+		setCounter(++dispatchCounter);
 		patrouilleObservers = new HashSet<PatrouilleObserver>();
 		geseind = new LinkedList<ITrackable>();
 	}
@@ -112,10 +114,4 @@ public class Dispatch extends Actor implements DispatchSubject{
 
 		return allCameras;
 	}
-
-	@Override
-	public String toString(){
-		return "\nDispatch " + super.toString();
-	}
-
 }

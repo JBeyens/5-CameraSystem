@@ -25,7 +25,7 @@ public abstract class Actor {
 
 	@Override
 	public String toString() {
-		return "\n\t " + getClass().getName() + " nr. " + getCounter()+ " bevindt zich op " + getLocatie();
+		return "\n\t " + getClass().getSimpleName() + " nr. " + getCounter()+ " bevindt zich op " + getLocatie();
 	}
 } 
 

@@ -41,4 +41,10 @@ public class Vehicle extends Actor implements ITrackable {
 		return isGeseind;
 	}
 
+	@Override
+	public void setLocatie(Locatie locatie) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
