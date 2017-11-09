@@ -1,13 +1,13 @@
 package model.actor;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 
 import model.Locatie;
 import observer.DispatchSubject;
 import observer.PatrouilleObserver;
+import utilities.StringOperations;
 
 
 /**
@@ -16,16 +16,15 @@ import observer.PatrouilleObserver;
 	@Project Intelligente Cameras
 	@Doel
  */
-
 public class Dispatch extends Actor implements DispatchSubject{
 	/*
 	 * Fields
 	 */
 	private static int dispatchCounter = 0; // Houdt de nummering van de objecten bij
 	private LinkedList<Camera> cameras;
-	private ITrackable gesignaleerdeTrackable;
-	private LinkedList<ITrackable> geseindeTrackables;
-	private Set<PatrouilleObserver> patrouilleObservers;
+	private LinkedList<ITrackable> geseindeTrackables = new LinkedList<ITrackable>();
+	private Set<ITrackable> gesignaleerdeTrackables = new HashSet<ITrackable>();
+	private Set<PatrouilleObserver> patrouilleObservers = new HashSet<PatrouilleObserver>();
 	
 	/*
 	 * Constructor
@@ -33,79 +32,66 @@ public class Dispatch extends Actor implements DispatchSubject{
 	public Dispatch(Locatie locatie) {
 		super(locatie);
 		setCounter(++dispatchCounter); // Houdt # Dispatches er gemaakt zijn & geeft dit aan de objecten
-		patrouilleObservers = new HashSet<PatrouilleObserver>(); // Patrouilles
-		geseindeTrackables = new LinkedList<ITrackable>(); // Geseinde voertuigen
 	}
 	
+	/* Signaleert een geseind voertuig door de observers te verwittigen en deze zelf ook bij te houden */
 	public void signaleer(ITrackable voertuig) {
 		if (!voertuig.getGeseind()) // Niet geseind => Geen actie ondernemen
-			return;
+			return; 
 		doNotify(voertuig); // Verwittig patrouilles
-	}
-
-	public ITrackable getGesignaleerd() {
-		return gesignaleerdeTrackable;
+		gesignaleerdeTrackables.add(voertuig);
 	}
 
 	
-	/* OBSERVER PATTERN
+	/* OBSERVER PATTERN - Notify
 	 * Private method waarin de observers op de hoogte gebracht worden van een gesignaleerd voertuig
 	 */
 	private void doNotify(ITrackable voertuig) {
-		Iterator<PatrouilleObserver> list = patrouilleObservers.iterator();
-		while (list.hasNext()) {
-			list.next().ontvangGesignaleerdeTrackable(gesignaleerdeTrackable);
+		for (PatrouilleObserver observer : patrouilleObservers) {
+			observer.ontvangGesignaleerdeTrackable(voertuig);
 		}
 	}
 
-	/* (non-Javadoc) OBSERVER PATTERN
-	 * @see observer.DispatchSubject#addObserver(observer.PatrouilleObserver)
+	/* OBSERVER PATTERN - AddObserver & RemoveObserver
+	 * Public methods voor een observer om zich in of uit te schrijven
 	 */
 	@Override
 	public void addObserver(PatrouilleObserver observer) {
 		patrouilleObservers.add(observer);	
 	}
-
-	/* (non-Javadoc) OBSERVER PATTERN
-	 * @see observer.DispatchSubject#removeObserver(observer.PatrouilleObserver)
-	 */
 	@Override
 	public void removeObserver(PatrouilleObserver observer) {
 		patrouilleObservers.remove(observer);
 	}
 	
 	
-	//Parameter could be index. Need further investigation
+	/* Methods om object toe te voegen of te verwijderen uit lijsten van dit object */
 	public void removeCamera(Camera camera){
 		this.cameras.remove(camera);
-	}
-	
+	}	
 	public void addCamera(Camera camera){
 		this.cameras.add(camera);
 	}
 
+	/* Property setters */
 	public void setCameras(LinkedList<Camera> cameras) {
 		this.cameras = cameras;
 	}
-
 	public void setGeseind(LinkedList<ITrackable> geseind) {
 		this.geseindeTrackables = geseind;
 	}
+	
 
-	public String getGeseind() {
-		String allGeSeind = "";
-		for (ITrackable iVoertuig : geseindeTrackables) {
-			allGeSeind += iVoertuig.toString();
-		}
-
-		return allGeSeind;
-	}
-
+	/* Method die cameras weergeeft als toString van elk element met de formatering in deze utility*/
 	public String getCameras() {
-		String allCameras = "";
-		for (Camera camera : cameras) {
-			allCameras += camera.toString();
-		}
-		return allCameras;
+		return StringOperations.collectionToString(cameras);
+	}
+	/* Method die geseinde objecten weergeeft als toString van elk element met de formatering in deze utility*/
+	public String getGeseind() {
+		return StringOperations.collectionToString(geseindeTrackables);
+	}
+	/* Method die gesignaleerde objecten weergeeft als toString van elk element met de formatering in deze utility*/
+	public String getGesignaleerd() {
+		return StringOperations.collectionToString(gesignaleerdeTrackables);
 	}
 }
