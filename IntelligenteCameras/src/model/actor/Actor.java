@@ -2,7 +2,7 @@ package model.actor;
 
 import model.Locatie;
 
-public abstract class Actor {
+public abstract class Actor implements ILocalisable{
 	// instance variables - 
 	private Locatie locatie;
 	private int counter;
