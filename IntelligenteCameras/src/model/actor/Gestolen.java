@@ -2,33 +2,30 @@ package model.actor;
 
 import model.Locatie;
 
-public class Gestolen implements ITrackable {
+public class Gestolen implements ITrackable{
+	private ITrackable trackableDecorated;
 
-	public Gestolen(ITrackable trackableObject) {
-		// TODO Auto-generated constructor stub
+	public Gestolen(ITrackable trackableObject){
+		trackableDecorated = trackableObject;
+	}
+	
+	public String toString(){
+		return trackableDecorated.toString() + " en is geseind want Gestolen";
 	}
 
-	@Override
 	public void setGeseind(Boolean isGeseind) {
-		// TODO Auto-generated method stub
-		
+		trackableDecorated.setGeseind(isGeseind);
 	}
 
-	@Override
 	public Boolean getGeseind() {
-		// TODO Auto-generated method stub
-		return null;
+		return trackableDecorated.getGeseind();
 	}
 
-	@Override
 	public void setLocatie(Locatie locatie) {
-		// TODO Auto-generated method stub
-		
+		trackableDecorated.setLocatie(locatie);
 	}
 
-	@Override
 	public Locatie getLocatie() {
-		// TODO Auto-generated method stub
-		return null;
+		return trackableDecorated.getLocatie();
 	}
 }

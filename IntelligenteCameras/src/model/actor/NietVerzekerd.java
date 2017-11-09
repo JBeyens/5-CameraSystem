@@ -1,13 +1,31 @@
 package model.actor;
 
-public class NietVerzekerd extends Voertuig implements ITrackable{
+import model.Locatie;
+
+public class NietVerzekerd implements ITrackable{
+	private ITrackable trackableDecorated;
 
 	public NietVerzekerd(ITrackable trackableObject){
-		super(trackableObject.getLocatie());
+		trackableDecorated = trackableObject;
 	}
 	
-	@Override
 	public String toString(){
-		return super.toString() + " en is geseind want niet verzekerd!";
+		return trackableDecorated.toString() + " en is geseind want niet Verzekerd!";
+	}
+
+	public void setGeseind(Boolean isGeseind) {
+		trackableDecorated.setGeseind(isGeseind);
+	}
+
+	public Boolean getGeseind() {
+		return trackableDecorated.getGeseind();
+	}
+
+	public void setLocatie(Locatie locatie) {
+		trackableDecorated.setLocatie(locatie);
+	}
+
+	public Locatie getLocatie() {
+		return trackableDecorated.getLocatie();
 	}
 }
