@@ -72,8 +72,7 @@ public class TestIntelligenteCameras {
 	 * @param cameras
 	 * @param voertuigen
 	 */
-	private static void detecteerVoertuigen(LinkedList<Camera> cameras,
-			LinkedList<ITrackable> voertuigen) {
+	private static void detecteerVoertuigen(LinkedList<Camera> cameras, LinkedList<ITrackable> voertuigen) {
 		ListIterator<ITrackable> listVoertuigen = voertuigen.listIterator();
 		ListIterator<Camera> listCameras = cameras.listIterator();
 		ITrackable voertuig;
@@ -95,13 +94,10 @@ public class TestIntelligenteCameras {
 	 * Enkel beschikbare patrouilles kunnen worden ingezet voor een achtervolging
 	 * @param patrouilles
 	 */
-	private static void registreerPatrouilles(
-			LinkedList<Patrouille> patrouilles) {
-
-		CopyOnWriteArrayList<Patrouille> copyList = new CopyOnWriteArrayList<Patrouille>(
-				patrouilles);
-// CopyOnWriteArrayList wordt gebruikt ter vervanging van LinkedList 
-//om de onderliggende elementen te kunnen wijzigen.
+	private static void registreerPatrouilles(LinkedList<Patrouille> patrouilles) {
+		CopyOnWriteArrayList<Patrouille> copyList = new CopyOnWriteArrayList<Patrouille>(patrouilles);
+		// CopyOnWriteArrayList wordt gebruikt ter vervanging van LinkedList 
+		// om de onderliggende elementen te kunnen wijzigen.
 		ListIterator<Patrouille> list = copyList.listIterator();
 		Patrouille patrouille;
 		int i = 0;

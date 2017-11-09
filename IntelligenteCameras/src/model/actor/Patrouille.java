@@ -1,5 +1,8 @@
 package model.actor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import model.Locatie;
 import observer.PatrouilleObserver;
 
@@ -12,26 +15,19 @@ import observer.PatrouilleObserver;
  */
 
 public class Patrouille extends Actor implements PatrouilleObserver{
-	/**
-	 * Fields
-	 **/
+	/** Fields **/
 	private static int patrouilleCounter = 0;
+	private Set<ITrackable> gesignalleerdTrackables;
 
-	/*
-	 * Constructor
-	 */
+	/** Constructor **/
 	public Patrouille(Locatie locatie) {
 		super(locatie);
 		setCounter(++patrouilleCounter);
+		gesignalleerdTrackables = new HashSet<ITrackable>();
 	}
 
-	
-	/* (non-Javadoc)
-	 * @see observer.PatrouilleObserver#doUpdate()
-	 */
-	@Override
-	public void doUpdate() {
-		// TODO Auto-generated method stub
-		
+	/** Methods **/
+	public void ontvangGesignaleerdeTrackable(ITrackable gesignaleerdObject) {
+		gesignalleerdTrackables.add(gesignaleerdObject);
 	}
 }

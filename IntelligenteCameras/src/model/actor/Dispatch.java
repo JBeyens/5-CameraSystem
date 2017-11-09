@@ -22,7 +22,8 @@ public class Dispatch extends Actor implements DispatchSubject{
 	 */
 	private static int dispatchCounter = 0; // Houdt de nummering van de objecten bij
 	private LinkedList<Camera> cameras;
-	private LinkedList<ITrackable> geseind;
+	private ITrackable gesignaleerdeTrackable;
+	private LinkedList<ITrackable> geseindeTrackables;
 	private Set<PatrouilleObserver> patrouilleObservers;
 	
 	/*
@@ -30,39 +31,35 @@ public class Dispatch extends Actor implements DispatchSubject{
 	 */
 	public Dispatch(Locatie locatie) {
 		super(locatie);
-		setCounter(++dispatchCounter);
-		patrouilleObservers = new HashSet<PatrouilleObserver>();
-		geseind = new LinkedList<ITrackable>();
+		setCounter(++dispatchCounter); // Houdt # Dispatches er gemaakt zijn & geeft dit aan de objecten
+		patrouilleObservers = new HashSet<PatrouilleObserver>(); // Patrouilles
+		geseindeTrackables = new LinkedList<ITrackable>(); // Geseinde voertuigen
 	}
 	
 	public void signaleer(ITrackable voertuig) {
-		/*
-		 * Check if voertuig is geseind
-		 * if true => doNotify();
-		 */
+		if (!voertuig.getGeseind()) // Niet geseind => Geen actie ondernemen
+			return;
 		
+		gesignaleerdeTrackable = voertuig; // Sla het voertuig op
+		doNotify(); // Verwittig patrouilles
 	}
 
 	public ITrackable getGesignaleerd() {
-		// TODO Auto-generated method stub
-		return null;
+		return gesignaleerdeTrackable;
 	}
 
 	
-	/* (non-Javadoc)
+	/* (non-Javadoc) OBSERVER PATTERN
 	 * @see observer.DispatchSubject#doNotify()
 	 */
 	@Override
 	public void doNotify() {
-		/*
-		 * Iterator through PatrouilleObservers
+		/* Iterator through PatrouilleObservers
 		 * while hasnext => doUpdate();
 		 */
-		
 	}
 
-
-	/* (non-Javadoc)
+	/* (non-Javadoc) OBSERVER PATTERN
 	 * @see observer.DispatchSubject#addObserver(observer.PatrouilleObserver)
 	 */
 	@Override
@@ -70,8 +67,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 		patrouilleObservers.add(observer);	
 	}
 
-
-	/* (non-Javadoc)
+	/* (non-Javadoc) OBSERVER PATTERN
 	 * @see observer.DispatchSubject#removeObserver(observer.PatrouilleObserver)
 	 */
 	@Override
@@ -94,12 +90,12 @@ public class Dispatch extends Actor implements DispatchSubject{
 	}
 
 	public void setGeseind(LinkedList<ITrackable> geseind) {
-		this.geseind = geseind;
+		this.geseindeTrackables = geseind;
 	}
 
 	public String getGeseind() {
 		String allGeSeind = "";
-		for (ITrackable iVoertuig : geseind) {
+		for (ITrackable iVoertuig : geseindeTrackables) {
 			allGeSeind += iVoertuig.toString();
 		}
 
