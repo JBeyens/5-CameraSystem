@@ -12,8 +12,8 @@ public class Camera extends Actor
      */
     public Camera(Locatie locatie)
     {
-        // initialise instance variables
-        super(locatie);
+    	// initialise instance variables
+        super(locatie); 
         setCounter(++count);
     }
     public double getSnelheid(Voertuig voertuig){ 
