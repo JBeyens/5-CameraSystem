@@ -40,6 +40,7 @@ public class TestIntelligenteCameras {
 		System.out.println("\n\nDe achtervolging wordt ingezet: ");
 		registreerPatrouilles(patrouilles);
 		detecteerVoertuigen(cameras, voertuigen);
+		achtervolgingVoertuigen();
 		System.out.printf("\n\nDe volgende Voertuigen werden achtervolgd: %s",	dispatch.getGesignaleerd());
 	}
 
@@ -86,14 +87,24 @@ public class TestIntelligenteCameras {
 				}
 			}
 		}
-		
+	}
+
+
+	/**
+	 * Welke patrouilles een achtervolging uitvoeren
+	 */
+	private static void achtervolgingVoertuigen() {
+		boolean patrouilleInAchtervolging = false;		
 		for(Patrouille patrouille : patrouilles)
 		{
 			if (patrouille.getGesignaleerd().size() == 0)
 				continue;
-				
+			patrouilleInAchtervolging = true;	
 			System.out.printf("%s zet achtervolging in voor %s", patrouille, patrouille.getGesignaleerdString());
 		}
+		
+		if (!patrouilleInAchtervolging)
+			System.out.println("\tEr is geen enkele patrouille in achtervolging!");
 		
 		System.out.printf("\n\nDe volgende Voertuigen werden door cameras gedetecteerd: %s", gedetecteerd);
 	}
