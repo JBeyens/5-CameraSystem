@@ -4,17 +4,26 @@ import model.Locatie;
 import model.NummerPlaat;
 
 public class Voertuig extends Actor implements ITrackable {
+	/**
+	 * Fields
+	 **/
 	private static int voertuigCounter = 0;
 	private String merk;
 	private Boolean isGeseind;
 	private NummerPlaat nummerPlaat;
 
+	/**
+	 * Constructor
+	 **/
 	public Voertuig(Locatie locatie) {
 		super(locatie);
 		setCounter(++voertuigCounter);
 		isGeseind = false;
 	}
 
+	/**
+	 * Methods
+	 **/
 	public NummerPlaat getNummerPlaat() {
 		return nummerPlaat;
 	}
