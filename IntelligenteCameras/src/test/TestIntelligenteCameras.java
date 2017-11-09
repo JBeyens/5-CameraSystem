@@ -5,12 +5,11 @@ import java.util.ListIterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import factory.ActorFactory;
-import model.actor.Actor;
 import model.actor.Camera;
 import model.actor.Dispatch;
 import model.actor.ITrackable;
 import model.actor.Patrouille;
-import randomizer.Randomizer;
+import utilities.Randomizer;
 
 public class TestIntelligenteCameras {
 	public static LinkedList<ITrackable> voertuigen;
@@ -87,6 +86,15 @@ public class TestIntelligenteCameras {
 				}
 			}
 		}
+		
+		for(Patrouille patrouille : patrouilles)
+		{
+			if (patrouille.getGesignaleerd().size() == 0)
+				continue;
+				
+			System.out.printf("%s zet achtervolging in voor %s", patrouille, patrouille.getGesignaleerdString());
+		}
+		
 		System.out.printf("\n\nDe volgende Voertuigen werden door cameras gedetecteerd: %s", gedetecteerd);
 	}
 
