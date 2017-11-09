@@ -100,7 +100,7 @@ public class TestIntelligenteCameras {
 			if (patrouille.getGesignaleerd().size() == 0)
 				continue;
 			patrouilleInAchtervolging = true;	
-			System.out.printf("%s zet achtervolging in voor %s", patrouille, patrouille.getGesignaleerdString());
+			System.out.printf("%s zet achtervolging in voor %s\n", patrouille, patrouille.getGesignaleerdString());
 		}
 		
 		if (!patrouilleInAchtervolging)
