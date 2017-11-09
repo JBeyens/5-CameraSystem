@@ -12,12 +12,17 @@ import observer.PatrouilleObserver;
  */
 
 public class Patrouille extends Actor implements PatrouilleObserver{
+	/**
+	 * Fields
+	 **/
+	private static int patrouilleCounter = 0;
 
 	/*
 	 * Constructor
 	 */
 	public Patrouille(Locatie locatie) {
 		super(locatie);
+		setCounter(++patrouilleCounter);
 	}
 
 	
@@ -29,10 +34,4 @@ public class Patrouille extends Actor implements PatrouilleObserver{
 		// TODO Auto-generated method stub
 		
 	}
-	
-	@Override
-	public String toString(){
-		return "\nPatrouille " + super.toString();
-	}
-
 }
