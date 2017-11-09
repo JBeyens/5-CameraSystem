@@ -2,6 +2,7 @@ package model.actor;
 
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Set;
 
 import model.Locatie;
@@ -24,7 +25,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	private LinkedList<Camera> cameras;
 	private LinkedList<ITrackable> geseindeTrackables = new LinkedList<ITrackable>();
 	private Set<ITrackable> gesignaleerdeTrackables = new HashSet<ITrackable>();
-	private Set<PatrouilleObserver> patrouilleObservers = new HashSet<PatrouilleObserver>();
+	private LinkedList<PatrouilleObserver> patrouilleObservers = new LinkedList<PatrouilleObserver>();
 	
 	/*
 	 * Constructor
@@ -47,9 +48,12 @@ public class Dispatch extends Actor implements DispatchSubject{
 	 * Private method waarin de observers op de hoogte gebracht worden van een gesignaleerd voertuig
 	 */
 	private void doNotify(ITrackable voertuig) {
-		for (PatrouilleObserver observer : patrouilleObservers) {
-			observer.ontvangGesignaleerdeTrackable(voertuig);
+		ListIterator<PatrouilleObserver> observer = patrouilleObservers.listIterator();
+		while(observer.hasNext()){
+			PatrouilleObserver o = observer.next();
+			o.ontvangGesignaleerdeTrackable(voertuig);
 		}
+			
 	}
 
 	/* OBSERVER PATTERN - AddObserver & RemoveObserver
