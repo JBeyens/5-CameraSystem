@@ -9,8 +9,12 @@ package utilities;
  */
 public final class StringOperations {
 
+	public static String collectionToStringWithBrackets(Iterable<? extends Object> input) {
+		return "[" + collectionToString(input) + "]";		
+	}
+	
 	public static String collectionToString(Iterable<? extends Object> input) {
-		String result = "[";
+		String result = "";
 		boolean first = true;
 		
 		for (Object object : input) {
@@ -21,9 +25,7 @@ public final class StringOperations {
 				
 			result += object.toString();
 		}
-		result += "]";
 		
-		return result;
-		
+		return result;		
 	}
 }
