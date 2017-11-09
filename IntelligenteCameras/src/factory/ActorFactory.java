@@ -6,7 +6,7 @@ import model.actor.Camera;
 import model.actor.Dispatch;
 import model.actor.Patrouille;
 import model.actor.Voertuig;
-import randomizer.Randomizer;
+import utilities.Randomizer;
 
 public class ActorFactory
 {
