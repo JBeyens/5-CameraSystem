@@ -12,25 +12,26 @@ public class NummerPlaat {
         this.nummerPlaat = nummerPlaat;
         this.geseind = false;
     }
-	
+
+    /** 
+     * Getter & setter voor 'geseind'
+     * 
+     * Enkel geseinde voertuigen/nummerplaten worden weerhouden door geïnteresseerden.
+     * Er kunnen verschillende redenen zijn waarom een voertuig geseind staat
+     **/
     public void setGeseind(boolean geseind){
-	    this.geseind = geseind;
-	   }
+	    this.geseind = geseind; }    
+    public boolean getGeseind(){
+    		return geseind;	}
     
-    public boolean isGeseind(){
-    		//enkel geseinde voertuigen/nummerplaten worden weerhouden door geÃ¯nteresseerden
-    		//Er kunnen verschillende redenen zijn waarom een voertuig geseind staat
-    		return geseind;
-    	}
-    @Override
-    public String toString(){
-    	return getNummerPlaat();
-    }
+    /* Getter & setter voor de String van de nummerplaat */
 	public String getNummerPlaat() {
-		return nummerPlaat;
-	}
+		return nummerPlaat;	}
 	public void setNummerPlaat(String nummerPlaat) {
-		this.nummerPlaat = nummerPlaat;
-	}
+		this.nummerPlaat = nummerPlaat;	}
+	
+	/* ToString methode voor nummerplaat */
+    public String toString(){
+    	return getNummerPlaat(); }
 
 }
