@@ -8,10 +8,6 @@ package utilities;
  *
  */
 public final class StringOperations {
-
-	public static String collectionToStringWithBrackets(Iterable<? extends Object> input) {
-		return "[" + collectionToString(input) + "]";		
-	}
 	
 	public static String collectionToString(Iterable<? extends Object> input) {
 		String result = "";
@@ -26,6 +22,6 @@ public final class StringOperations {
 			result += object.toString();
 		}
 		
-		return result;		
+		return "[" + result + "]";		
 	}
 }
