@@ -1,6 +1,7 @@
 package model.actor;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 
@@ -39,9 +40,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	public void signaleer(ITrackable voertuig) {
 		if (!voertuig.getGeseind()) // Niet geseind => Geen actie ondernemen
 			return;
-		
-		gesignaleerdeTrackable = voertuig; // Sla het voertuig op
-		doNotify(); // Verwittig patrouilles
+		doNotify(voertuig); // Verwittig patrouilles
 	}
 
 	public ITrackable getGesignaleerd() {
@@ -49,14 +48,14 @@ public class Dispatch extends Actor implements DispatchSubject{
 	}
 
 	
-	/* (non-Javadoc) OBSERVER PATTERN
-	 * @see observer.DispatchSubject#doNotify()
+	/* OBSERVER PATTERN
+	 * Private method waarin de observers op de hoogte gebracht worden van een gesignaleerd voertuig
 	 */
-	@Override
-	public void doNotify() {
-		/* Iterator through PatrouilleObservers
-		 * while hasnext => doUpdate();
-		 */
+	private void doNotify(ITrackable voertuig) {
+		Iterator<PatrouilleObserver> list = patrouilleObservers.iterator();
+		while (list.hasNext()) {
+			list.next().ontvangGesignaleerdeTrackable(gesignaleerdeTrackable);
+		}
 	}
 
 	/* (non-Javadoc) OBSERVER PATTERN
@@ -107,7 +106,6 @@ public class Dispatch extends Actor implements DispatchSubject{
 		for (Camera camera : cameras) {
 			allCameras += camera.toString();
 		}
-
 		return allCameras;
 	}
 }
