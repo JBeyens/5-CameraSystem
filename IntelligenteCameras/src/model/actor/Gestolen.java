@@ -21,10 +21,6 @@ public class Gestolen implements ITrackable{
 		return trackableDecorated.getGeseind();
 	}
 
-	public void setLocatie(Locatie locatie) {
-		trackableDecorated.setLocatie(locatie);
-	}
-
 	public Locatie getLocatie() {
 		return trackableDecorated.getLocatie();
 	}

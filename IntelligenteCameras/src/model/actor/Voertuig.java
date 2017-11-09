@@ -9,7 +9,6 @@ public class Voertuig extends Actor implements ITrackable {
 	 **/
 	private static int voertuigCounter = 0;
 	private String merk;
-	private Boolean isGeseind;
 	private NummerPlaat nummerPlaat;
 
 	/**
@@ -18,52 +17,32 @@ public class Voertuig extends Actor implements ITrackable {
 	public Voertuig(Locatie locatie) {
 		super(locatie);
 		setCounter(++voertuigCounter);
-		isGeseind = false;
 	}
 
 	/**
 	 * Methods
 	 **/
+	/* Getter & Setter voor nummerplaat */
 	public NummerPlaat getNummerPlaat() {
-		return nummerPlaat;
-	}
-
+		return nummerPlaat;	}
 	public void setNummerPlaat(NummerPlaat nummerPlaat) {
-		this.nummerPlaat = nummerPlaat;
-	}
-	
-	public String getMerk() {
-		return merk;
-	}
-	
-	public void setMerk(String merk) {
-		this.merk = merk;
-	}
+		this.nummerPlaat = nummerPlaat;	}
 
-	@Override
+	/* Getter & Setter voor merk */
+	public String getMerk() {
+		return merk; }	
+	public void setMerk(String merk) {
+		this.merk = merk; }
+
+	/* Getter & Setter voor geseind, wat op de nummerplaat uitgevoerd wordt */
+	public Boolean getGeseind() {
+		return nummerPlaat.getGeseind(); }
 	public void setGeseind(Boolean isGeseind) {
-		this.isGeseind = isGeseind;
-	}
+		nummerPlaat.setGeseind(isGeseind); }
 	
+	/* ToString methode, uitbreiding op deze van base class */
 	@Override
 	public String toString(){
 		return super.toString() + " met nummerplaat " + getNummerPlaat() + ", en is van het merk " + getMerk();
 	}
-	
-	@Override
-	public Locatie getLocatie(){
-		return super.getLocatie();
-	}
-
-	@Override
-	public Boolean getGeseind() {
-		return isGeseind;
-	}
-
-	@Override
-	public void setLocatie(Locatie locatie) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
