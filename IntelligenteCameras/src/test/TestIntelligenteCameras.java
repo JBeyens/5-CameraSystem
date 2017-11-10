@@ -13,7 +13,6 @@ import utilities.Randomizer;
 
 public class TestIntelligenteCameras {
 	public static LinkedList<ITrackable> voertuigen;
-	public static LinkedList<Camera> cameras;
 	public static LinkedList<Patrouille> patrouilles;
 	public static LinkedList<ITrackable> gedetecteerd;
 	public static LinkedList<ITrackable> geseind;
@@ -22,7 +21,6 @@ public class TestIntelligenteCameras {
 
 	public static void main(String[] args) {
 		voertuigen = Randomizer.getVoertuigen();
-		cameras = Randomizer.getCameras();
 		patrouilles = Randomizer.getPatrouilles();
 		gedetecteerd = new LinkedList<ITrackable>();
 		geseind = new LinkedList<ITrackable>();
@@ -39,7 +37,7 @@ public class TestIntelligenteCameras {
 	private static void simuleerAchtervolging() {
 		System.out.println("\n\nDe achtervolging wordt ingezet: ");
 		registreerPatrouilles(patrouilles);
-		detecteerVoertuigen(cameras, voertuigen);
+		detecteerVoertuigen(dispatch.getCameras(), voertuigen);
 		achtervolgingVoertuigen();
 		System.out.printf("\n\nDe volgende Voertuigen werden achtervolgd: %s",	dispatch.getGesignaleerd());
 	}
@@ -48,7 +46,7 @@ public class TestIntelligenteCameras {
 	 * 	configureren van basic data
 	 */
 	private static void configureerData() {
-		dispatch.setCameras(cameras);
+		dispatch.setCameras(Randomizer.getCameras());
 		for (int i = 0; i < 10; i++) {
 			geseind.add(Randomizer.seinGestolenVoertuig(voertuigen));
 			geseind.add(Randomizer.seinNietVerzekerdVoertuig(voertuigen));
@@ -63,7 +61,7 @@ public class TestIntelligenteCameras {
 		System.out.printf("De volgende Dispatch werd gegenereerd: %s", dispatch);
 		System.out.printf("\n\nDe volgende Voertuigen werden gegenereerd: %s",	voertuigen);
 		System.out.printf("\n\nDe volgende Patrouilles werden gegenereerd: %s", patrouilles);
-		System.out.printf("\n\nDe volgende Cameras werden gegenereerd: %s", dispatch.getCameras());
+		System.out.printf("\n\nDe volgende Cameras werden gegenereerd: %s", dispatch.getCamerasAsString());
 		System.out.printf("\n\nDe volgende Voertuigen werden geseind: %s", dispatch.getGeseind());
 	}
 

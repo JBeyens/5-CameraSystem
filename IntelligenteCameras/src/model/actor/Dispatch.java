@@ -24,7 +24,7 @@ public class Dispatch extends Actor implements DispatchSubject{
 	private static int dispatchCounter = 0; // Houdt de nummering van de objecten bij
 	private LinkedList<Camera> cameras;
 	private LinkedList<ITrackable> geseindeTrackables = new LinkedList<ITrackable>();
-	private Set<ITrackable> gesignaleerdeTrackables = new HashSet<ITrackable>();
+	private LinkedList<ITrackable> gesignaleerdeTrackables = new LinkedList<ITrackable>();
 	private LinkedList<PatrouilleObserver> patrouilleObservers = new LinkedList<PatrouilleObserver>();
 	
 	/*
@@ -81,13 +81,16 @@ public class Dispatch extends Actor implements DispatchSubject{
 	public void setCameras(LinkedList<Camera> cameras) {
 		this.cameras = cameras;
 	}
+	public LinkedList<Camera> getCameras(){
+		return cameras;
+	}
 	public void setGeseind(LinkedList<ITrackable> geseind) {
 		this.geseindeTrackables = geseind;
 	}
 	
 
 	/* Method die cameras weergeeft als toString van elk element met de formatering in deze utility*/
-	public String getCameras() {
+	public String getCamerasAsString() {
 		return StringOperations.collectionToString(cameras);
 	}
 	/* Method die geseinde objecten weergeeft als toString van elk element met de formatering in deze utility*/

@@ -26,8 +26,10 @@ public class Patrouille extends Actor implements PatrouilleObserver{
 		// Verhogen van teller aantal objecten uit deze klasse & opslaan van nummer van dit object
 		setCounter(++patrouilleCounter); 
 	}
+	
+	/* Beschikbaar/Bezet zetten voor interventie
 
-	/** OBSERVER PATERN: Method waarop het subject deze observer kan verwittigen **/
+	/** OBSERVER PATTERN: Method waarop het subject deze observer kan verwittigen **/
 	public void ontvangGesignaleerdeTrackable(ITrackable gesignaleerdObject) {
 		gesignalleerdTrackables.add(gesignaleerdObject);
 	}
