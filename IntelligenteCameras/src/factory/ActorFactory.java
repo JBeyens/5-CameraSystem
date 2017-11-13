@@ -8,6 +8,14 @@ import model.actor.Patrouille;
 import model.actor.Voertuig;
 import utilities.Randomizer;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 07/11/2017
+	@Project Intelligente Cameras
+	@Doel Factory for actors
+ */
+
 public class ActorFactory
 {
     public static final int DISPATCH = 1;
