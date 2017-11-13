@@ -10,8 +10,4 @@ public class NietVerzekerd extends TrackableDecorator{
 	public String toString(){
 		return super.toString() + " en is geseind want niet Verzekerd!";
 	}
-
-	
-
-	
 }
