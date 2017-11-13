@@ -15,19 +15,16 @@ public abstract class TrackableDecorator implements ITrackable{
 	
 	@Override
 	public void setGeseind(Boolean isGeseind) {
-		// TODO Auto-generated method stub
-		
+		trackableDecorated.setGeseind(isGeseind);
 	}
 
 	@Override
 	public Boolean getGeseind() {
-		// TODO Auto-generated method stub
-		return null;
+		return trackableDecorated.getGeseind();
 	}
 
 	@Override
 	public Locatie getLocatie() {
-		// TODO Auto-generated method stub
-		return null;
+		return trackableDecorated.getLocatie();
 	}
 }
