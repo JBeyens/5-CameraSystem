@@ -1,6 +1,5 @@
 package model.actor;
 
-import model.Locatie;
 
 public class NietVerzekerd extends TrackableDecorator{
 	
