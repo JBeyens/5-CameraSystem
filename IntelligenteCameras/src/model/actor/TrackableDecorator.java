@@ -7,5 +7,7 @@ public abstract class TrackableDecorator implements ITrackable{
 		this.trackableDecorated = iTrackable;
 	}
 	
-	
+	public String toString(){
+		return trackableDecorated.toString();
+	}
 }
