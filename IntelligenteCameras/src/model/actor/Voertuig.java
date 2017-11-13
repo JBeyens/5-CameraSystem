@@ -1,5 +1,6 @@
 package model.actor;
 
+import model.ITrackable;
 import model.Locatie;
 import model.NummerPlaat;
 

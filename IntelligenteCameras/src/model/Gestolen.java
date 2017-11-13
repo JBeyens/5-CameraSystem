@@ -1,6 +1,4 @@
-package model.actor;
-
-
+package model;
 
 public class Gestolen extends TrackableDecorator{
 	

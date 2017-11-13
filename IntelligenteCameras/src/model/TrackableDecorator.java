@@ -1,6 +1,4 @@
-package model.actor;
-
-import model.Locatie;
+package model;
 
 public abstract class TrackableDecorator implements ITrackable{
 	private ITrackable trackableDecorated;

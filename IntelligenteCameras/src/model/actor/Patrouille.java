@@ -2,6 +2,7 @@ package model.actor;
 
 import java.util.HashSet;
 
+import model.ITrackable;
 import model.Locatie;
 import observer.PatrouilleObserver;
 import utilities.StringOperations;

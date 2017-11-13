@@ -3,6 +3,7 @@ package model.actor;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
+import model.ITrackable;
 import model.Locatie;
 import observer.DispatchSubject;
 import observer.PatrouilleObserver;

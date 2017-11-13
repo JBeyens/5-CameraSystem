@@ -1,5 +1,6 @@
 package model.actor;
 
+import model.ILocalisable;
 import model.Locatie;
 
 public abstract class Actor implements ILocalisable{

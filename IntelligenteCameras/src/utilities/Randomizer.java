@@ -4,17 +4,17 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import factory.ActorFactory;
+import model.Gestolen;
+import model.ITrackable;
 import model.Locatie;
+import model.NietVerzekerd;
 import model.NummerPlaat;
 import model.actor.Camera;
-import model.actor.Gestolen;
-import model.actor.ITrackable;
-import model.actor.NietVerzekerd;
 import model.actor.Patrouille;
 import model.actor.Voertuig;
 
 public class Randomizer {
-// properties en methods om via een random object ‘test’ data te genereren.
+// properties en methods om via een random object ï¿½testï¿½ data te genereren.
 	// instance variables - 
 	private static Random random = new Random();
 	private static final int MAX_CAMERAS = 50;
@@ -39,7 +39,7 @@ public class Randomizer {
 
 	public static String getMerk() {
 		String merken[] = { "Ford", "VW", "Hyundai", "Opel", "Chevrolet",
-				"Citroën", "Renault", "Seat", "Skoda", "Toyota", "Lada",
+				"Citroï¿½n", "Renault", "Seat", "Skoda", "Toyota", "Lada",
 				"Mitsubishi", "Nissan", "Dacia", "Jaguar", "Mercedes", "BMW",
 				"Porche", "Range Rover"};
 		return merken[random.nextInt(merken.length)];

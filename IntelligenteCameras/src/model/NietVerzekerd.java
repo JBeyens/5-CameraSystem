@@ -1,5 +1,4 @@
-package model.actor;
-
+package model;
 
 public class NietVerzekerd extends TrackableDecorator{
 	

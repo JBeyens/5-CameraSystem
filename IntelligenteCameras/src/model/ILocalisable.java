@@ -1,6 +1,4 @@
-package model.actor;
-
-import model.Locatie;
+package model;
 
 public interface ILocalisable {
 	public Locatie getLocatie();

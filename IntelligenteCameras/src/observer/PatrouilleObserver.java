@@ -1,6 +1,6 @@
 package observer;
 
-import model.actor.ITrackable;
+import model.ITrackable;
 
 /*
  * Name of method need to change. Just created body

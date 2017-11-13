@@ -5,9 +5,9 @@ import java.util.ListIterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import factory.ActorFactory;
+import model.ITrackable;
 import model.actor.Camera;
 import model.actor.Dispatch;
-import model.actor.ITrackable;
 import model.actor.Patrouille;
 import utilities.Randomizer;
 
