@@ -12,20 +12,14 @@ import model.actor.Patrouille;
 import utilities.Randomizer;
 
 public class TestIntelligenteCameras {
-	public static LinkedList<ITrackable> voertuigen;
-	public static LinkedList<Patrouille> patrouilles;
-	public static LinkedList<ITrackable> gedetecteerd;
-	public static LinkedList<ITrackable> geseind;
-	public static Dispatch dispatch;
+	public static LinkedList<ITrackable> voertuigen = Randomizer.getVoertuigen();
+	public static LinkedList<Patrouille> patrouilles = Randomizer.getPatrouilles();
+	public static LinkedList<ITrackable> gedetecteerd = new LinkedList<>();
+	public static LinkedList<ITrackable> geseind = new LinkedList<>();
+	public static Dispatch dispatch = (Dispatch) ActorFactory.createActor(ActorFactory.DISPATCH,Randomizer.getLocatie());
 
 
 	public static void main(String[] args) {
-		voertuigen = Randomizer.getVoertuigen();
-		patrouilles = Randomizer.getPatrouilles();
-		gedetecteerd = new LinkedList<ITrackable>();
-		geseind = new LinkedList<ITrackable>();
-		dispatch = (Dispatch) ActorFactory.createActor(ActorFactory.DISPATCH,Randomizer.getLocatie());
-
 		configureerData();
 		printBasicData();
 		simuleerAchtervolging();
