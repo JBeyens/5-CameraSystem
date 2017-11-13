@@ -9,6 +9,7 @@ import model.ITrackable;
 import model.Locatie;
 import model.NietVerzekerd;
 import model.NummerPlaat;
+import model.ReedTeSnel;
 import model.actor.Camera;
 import model.actor.Patrouille;
 import model.actor.Voertuig;
@@ -107,6 +108,14 @@ public class Randomizer {
 	public static ITrackable seinNietVerzekerdVoertuig(LinkedList<ITrackable> voertuigen){
 		int index = random.nextInt(voertuigen.size());
 		ITrackable voertuig = new NietVerzekerd(voertuigen.get(index));
+		voertuig.setGeseind(true);
+		voertuigen.set(index, voertuig);
+		return voertuigen.get(index);
+	}
+	
+	public static ITrackable seinReedTeSnelVoertuig(LinkedList<ITrackable> voertuigen){
+		int index = random.nextInt(voertuigen.size());
+		ITrackable voertuig = new ReedTeSnel(voertuigen.get(index));
 		voertuig.setGeseind(true);
 		voertuigen.set(index, voertuig);
 		return voertuigen.get(index);

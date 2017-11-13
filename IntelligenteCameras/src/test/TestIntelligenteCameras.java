@@ -44,6 +44,7 @@ public class TestIntelligenteCameras {
 		for (int i = 0; i < 10; i++) {
 			geseind.add(Randomizer.seinGestolenVoertuig(voertuigen));
 			geseind.add(Randomizer.seinNietVerzekerdVoertuig(voertuigen));
+			geseind.add(Randomizer.seinReedTeSnelVoertuig(voertuigen));
 		}
 		dispatch.setGeseind(geseind);
 	}
