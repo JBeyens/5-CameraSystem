@@ -4,8 +4,10 @@
 package utilities;
 
 /**
- * @author Jef_B
- *
+ * 	@Author jef Beyens & Ben Vandevorst
+	@Datum 07/11/2017
+	@Project Intelligente Cameras
+	@Doel
  */
 public final class StringOperations {
 	
