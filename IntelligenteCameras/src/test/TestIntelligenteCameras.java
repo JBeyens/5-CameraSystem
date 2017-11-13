@@ -61,10 +61,10 @@ public class TestIntelligenteCameras {
 	 */
 	private static void printBasicData() {
 		log.info(String.format("De volgende Dispatch werd gegenereerd: %s", dispatch) + "\n\n");
-		log.info(String.format("De volgende Voertuigen werden gegenereerd: %s",	voertuigen));
-		log.info(String.format("\n\nDe volgende Patrouilles werden gegenereerd: %s", patrouilles));
-		log.info(String.format("\n\nDe volgende Cameras werden gegenereerd: %s", dispatch.getCamerasAsString()));
-		log.info(String.format("\n\nDe volgende Voertuigen werden geseind: %s", dispatch.getGeseind()));
+		log.info(String.format("De volgende Voertuigen werden gegenereerd: %s",	voertuigen) + "\n\n");
+		log.info(String.format("De volgende Patrouilles werden gegenereerd: %s", patrouilles) + "\n\n");
+		log.info(String.format("De volgende Cameras werden gegenereerd: %s", dispatch.getCamerasAsString()) + "\n\n");
+		log.info(String.format("De volgende Voertuigen werden geseind: %s", dispatch.getGeseind()));
 	}
 
 	/**
