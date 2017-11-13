@@ -36,11 +36,12 @@ public class TestIntelligenteCameras {
 	 * 	 achtervolging simuleren
 	 */
 	private static void simuleerAchtervolging() {
-		log.info("\n\nDe achtervolging wordt ingezet: ");
+		String verslag = "De achtervolging wordt ingezet: ";
 		registreerPatrouilles(patrouilles);
 		detecteerVoertuigen(dispatch.getCameras(), voertuigen);
 		achtervolgingVoertuigen();
-		log.info(String.format("\n\nDe volgende Voertuigen werden achtervolgd: %s",	dispatch.getGesignaleerd()));
+		verslag += String.format("De volgende Voertuigen werden achtervolgd: %s",	dispatch.getGesignaleerd()) + "\n\n";
+		log.info(verslag);
 	}
 
 	/**
@@ -64,7 +65,7 @@ public class TestIntelligenteCameras {
 		log.info(String.format("De volgende Voertuigen werden gegenereerd: %s",	voertuigen) + "\n\n");
 		log.info(String.format("De volgende Patrouilles werden gegenereerd: %s", patrouilles) + "\n\n");
 		log.info(String.format("De volgende Cameras werden gegenereerd: %s", dispatch.getCamerasAsString()) + "\n\n");
-		log.info(String.format("De volgende Voertuigen werden geseind: %s", dispatch.getGeseind()));
+		log.info(String.format("De volgende Voertuigen werden geseind: %s", dispatch.getGeseind()) + "\n\n");
 	}
 
 	/**
@@ -94,19 +95,21 @@ public class TestIntelligenteCameras {
 	 * Welke patrouilles een achtervolging uitvoeren
 	 */
 	private static void achtervolgingVoertuigen() {
-		boolean patrouilleInAchtervolging = false;		
+		boolean patrouilleInAchtervolging = false;
+		String verslagAchtervolging = "";
 		for(Patrouille patrouille : patrouilles)
 		{
 			if (patrouille.getGesignaleerd().size() == 0)
 				continue;
 			patrouilleInAchtervolging = true;	
-			log.info(String.format("%s zet achtervolging in voor %s\n", patrouille, patrouille.getGesignaleerdString()));
+			verslagAchtervolging += String.format("%s zet achtervolging in voor %s\n", patrouille, patrouille.getGesignaleerdString());
 		}
 		
 		if (!patrouilleInAchtervolging)
-			log.info("\tEr is geen enkele patrouille in achtervolging!");
+			verslagAchtervolging += "\tEr is geen enkele patrouille in achtervolging!";
+		log.info(verslagAchtervolging + "\n\n");
 		
-		log.info(String.format("\n\nDe volgende Voertuigen werden door cameras gedetecteerd: %s", gedetecteerd));
+		log.info(String.format("De volgende Voertuigen werden door cameras gedetecteerd: %s", gedetecteerd) + "\n\n");
 	}
 
 	/**
