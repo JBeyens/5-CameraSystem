@@ -14,6 +14,14 @@ import model.actor.Camera;
 import model.actor.Patrouille;
 import model.actor.Voertuig;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 17/11/2017
+	@Project Intelligente Cameras
+	@Doel Randomizer functies to test functionality
+ */
+
 public class Randomizer {
 // properties en methods om via een random object �test� data te genereren.
 	// instance variables - 

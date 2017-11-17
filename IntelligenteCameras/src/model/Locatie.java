@@ -1,5 +1,13 @@
 package model;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 17/11/2017
+	@Project Intelligente Cameras
+	@Doel Holds a location to localise an object
+ */
+
 public class Locatie {
 	private String locatie;
 

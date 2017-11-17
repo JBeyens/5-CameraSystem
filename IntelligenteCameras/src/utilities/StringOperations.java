@@ -7,8 +7,9 @@ package utilities;
  * 	@Author jef Beyens & Ben Vandevorst
 	@Datum 07/11/2017
 	@Project Intelligente Cameras
-	@Doel
+	@Doel Helper function to collect String from objects in a list
  */
+
 public final class StringOperations {
 	
 	public static String collectionToString(Iterable<? extends Object> input) {

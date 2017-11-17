@@ -1,5 +1,13 @@
 package model;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 17/11/2017
+	@Project Intelligente Cameras
+	@Doel Model => holds Nummerplaat + Boolean ( is deze geseind? )
+ */
+
 public class NummerPlaat {
 	private boolean geseind;
     private String nummerPlaat;
@@ -16,7 +24,7 @@ public class NummerPlaat {
     /** 
      * Getter & setter voor 'geseind'
      * 
-     * Enkel geseinde voertuigen/nummerplaten worden weerhouden door geïnteresseerden.
+     * Enkel geseinde voertuigen/nummerplaten worden weerhouden door geï¿½nteresseerden.
      * Er kunnen verschillende redenen zijn waarom een voertuig geseind staat
      **/
     public void setGeseind(boolean geseind){

@@ -1,5 +1,13 @@
 package model;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 17/11/2017
+	@Project Intelligente Cameras
+	@Doel Concrete class for Decoratorpattern
+ */
+
 public class Gestolen extends TrackableDecorator{
 	
 	public Gestolen(ITrackable trackableObject){

@@ -1,5 +1,13 @@
 package model;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 17/11/2017
+	@Project Intelligente Cameras
+	@Doel Abstract Decorator to implement pattern
+ */
+
 public abstract class TrackableDecorator implements ITrackable{
 	private ITrackable trackableDecorated;
 	
