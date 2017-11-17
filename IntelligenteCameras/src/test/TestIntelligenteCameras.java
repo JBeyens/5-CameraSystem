@@ -16,7 +16,7 @@ import model.actor.Patrouille;
 import utilities.Randomizer;
 
 public class TestIntelligenteCameras {
-	public static Logger log = Logger.getLogger(TestIntelligenteCameras.class.getName());
+	public static Logger log = Logger.getLogger( Thread.currentThread().getStackTrace()[0].getClassName() );
 	public static LinkedList<ITrackable> voertuigen = Randomizer.getVoertuigen();
 	public static LinkedList<Patrouille> patrouilles = Randomizer.getPatrouilles();
 	public static LinkedList<ITrackable> gedetecteerd = new LinkedList<>();
