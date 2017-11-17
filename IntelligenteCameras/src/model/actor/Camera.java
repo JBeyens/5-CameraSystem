@@ -4,6 +4,14 @@ import factory.ActorFactory;
 import model.Foto;
 import model.Locatie;
 
+
+/**
+ * 	@Author Ben Vandevorst & Jef Beyens
+	@Datum 17/11/2017
+	@Project Intelligente Cameras
+	@Doel 
+ */
+
 public class Camera extends Actor
 {//triviale properties en methods van een Camera
     private static int count = 0;

@@ -12,8 +12,9 @@ import utilities.StringOperations;
  * 	@Author Ben Vandevorst & Jef Beyens
 	@Datum 07/11/2017
 	@Project Intelligente Cameras
-	@Doel
+	@Doel Observer to Dispatch. When notified, will start chasing a tracked vehicle
  */
+
 public class Patrouille extends Actor implements PatrouilleObserver{
 	/** Fields **/
 	private static int patrouilleCounter = 0;

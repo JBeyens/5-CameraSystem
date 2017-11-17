@@ -14,8 +14,10 @@ import utilities.StringOperations;
  * 	@Author Ben Vandevorst & Jef Beyens
 	@Datum 07/11/2017
 	@Project Intelligente Cameras
-	@Doel
+	@Doel Organizes Trackables, cameras and patrouilles. Is subject to notify patrouille to
+			start chase
  */
+
 public class Dispatch extends Actor implements DispatchSubject{
 	/*
 	 * Fields
