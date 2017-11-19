@@ -6,8 +6,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.log4j.xml.Log4jEntityResolver;
-
 import factory.ActorFactory;
 import model.ITrackable;
 import model.actor.Camera;

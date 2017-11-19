@@ -13,7 +13,8 @@ public class ReedTeSnel extends TrackableDecorator{
 	public ReedTeSnel(ITrackable iTrackable) {
 		super(iTrackable);
 	}
-
+	
+	// Additional information on the toString information from the base class
 	@Override
 	public String toString(){
 		return super.toString() + " en reed te snel!";

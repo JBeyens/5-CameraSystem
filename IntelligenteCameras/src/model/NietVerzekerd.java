@@ -14,6 +14,7 @@ public class NietVerzekerd extends TrackableDecorator{
 		super(trackableObject);
 	}
 	
+	// Additional information on the toString information from the base class
 	@Override
 	public String toString(){
 		return super.toString() + " en is geseind want niet Verzekerd!";

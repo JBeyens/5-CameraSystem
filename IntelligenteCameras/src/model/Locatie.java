@@ -26,6 +26,7 @@ public class Locatie {
         return locatie;
     }
 
+    // Vergelijkt de parameter locatie met de locatie opgeslagen in het object van deze klasse
     public boolean equals(Locatie locatie){
     	return this.locatie.equals(locatie.getLocatie());
     }
